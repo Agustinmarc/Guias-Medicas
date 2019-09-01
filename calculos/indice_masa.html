@@ -5,16 +5,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="Sitio con guías médicas" />
-		<meta name="keywords" content="guías, review, medicina" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<meta name="keywords" content="medicina, indice de masa corporal, obesidad, sobrepeso" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<section id="header">
-					<div class="container">
-
+					<div class="subcontainer">
+						<h2>Índice de masa corporal</h2>
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
@@ -93,64 +93,70 @@
 
 									<!-- Post -->
 										<article class="box post">
-											<header>
-												
-											</header>
-											<div class="container">
-											<header>
-												
-											</header>
 											<div class="row">
-												<div class="col-6 col-12-medium">
 													<section>
-														<form method="post" action="#">
+														<form name="form_imc" method="post" action="#">
 															<div class="row gtr-50">
-																<div class="col-12">
-																	<input name="peso" placeholder="Peso" type="text" />
+																<div class="col-3">
+																	<input name="peso" type="number" placeholder="Peso" autofocus min="1" required />
 																</div>
-																<div class="col-12">
-																	<input name="talla" placeholder="Talla" type="text" />
+																<div class="col-9">
+																	<p>Kg</p>
 																</div>
-																<div class="col-12">
-																	<a href="#" class="button icon solid fa-file">Calcular</a>
+																<div class="col-3">
+																	<input name="talla" type="number" placeholder="Talla" min="1" required />
+																</div>
+																<div class="col-9">
+																	<p>metros</p>
+																</div>
+																<div class="col-6">
+																	<p onclick="calcular_imc()" class="button icon solid fa-calculator">Calcular</p>
+																</div>
+																<div class="col-6">
+																	<p></p>
+																</div>
+																<div class="col-3">
+																	<p><strong>Resultado: </strong></p>
+																</div>
+																<div class="col-6">
+																	<span id="resultado_imc" class="resultado_numerico">   </span>
 																</div>
 															</div>
 														</form>
 													</section>
-												</div>
 											</div>
 											<div class="row">
-												<h3>Valores del IMC</h3>
-												<table class="" border="1">
-													<caption>Valores del IMC</caption>
-													<tr>
-														<td>Bajo Peso</td>
-														<td>&lt; 18,5</td>
-													</tr>
-													<tr>
-														<td>Peso Normal</td>
-														<td>18,5 - 24,9</td>
-													</tr>
-													<tr>
-														<td>Sobrepeso</td>
-														<td>25 - 29,9</td>
-													</tr>
-													<tr>
-														<td>Obesidad grado I</td>
-														<td>30 - 34,9</td>
-													</tr>
-													<tr>
-														<td>Obesidad grado II</td>
-														<td>35 - 39,9</td>
-													</tr>
-													<tr>
-														<td>Obesidad grado III</td>
-														<td>&gt; 40</td>
-													</tr>
-												</table>
+												<div class="col-6 col-12-medium">
+													<table class="" border="1">
+														<caption>Valores del IMC</caption>
+														<tr>
+															<td>Bajo Peso</td>
+															<td>&lt; 18,5</td>
+														</tr>
+														<tr>
+															<td>Peso Normal</td>
+															<td>18,5 - 24,9</td>
+														</tr>
+														<tr>
+															<td>Sobrepeso</td>
+															<td>25 - 29,9</td>
+														</tr>
+														<tr>
+															<td>Obesidad grado I</td>
+															<td>30 - 34,9</td>
+														</tr>
+														<tr>
+															<td>Obesidad grado II</td>
+															<td>35 - 39,9</td>
+														</tr>
+														<tr>
+															<td>Obesidad grado III</td>
+															<td>&gt; 40</td>
+														</tr>
+													</table>
+												</div>
 											</div>
 										</article>
-
 								</div>
 
 							<!-- Sidebar -->
@@ -161,7 +167,7 @@
 											<ul class="divided">
 												<li>
 													<header>
-														<h3>Temas relacionados</h3>
+														<h2>Temas relacionados</h2>
 													</header>
 													<!-- Excerpt -->
 														<article class="box excerpt">
@@ -170,7 +176,7 @@
 															</header>
 															<p></p>
 															<ul class="actions">
-																<li><a href="#" class="button icon solid fa-file">Ir</a></li>
+																<li><a href="#" class="button ">Ir</a></li>
 															</ul>
 														</article>
 
@@ -192,5 +198,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script src="calculos.js"></script>
 	</body>
 </html>
